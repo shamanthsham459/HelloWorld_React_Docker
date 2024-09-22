@@ -14,20 +14,6 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                // Install Node.js dependencies
-                sh 'npm install'
-            }
-        }
-
-        stage('Build React App') {
-            steps {
-                // Build the React app
-                sh 'npm run build'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 // Build the Docker image
