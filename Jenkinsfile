@@ -35,6 +35,15 @@ pipeline {
                 }
             }
         }
+
+        stage('Remove Docker Image') {
+            steps {
+                // Remove the Docker image
+                script {
+                    sh 'docker rmi $DOCKER_IMAGE || true'
+                }
+            }
+        }
     }
 
     post {
