@@ -31,7 +31,7 @@ pipeline {
                     sh 'docker rm $CONTAINER_NAME || true'
                     
                     // Run the new container
-                    sh 'docker run -d --name $CONTAINER_NAME -p 3000:80 $DOCKER_IMAGE'
+                    sh 'docker run -d --restart unless-stopped --name $CONTAINER_NAME -p 3000:80 $DOCKER_IMAGE'
                 }
             }
         }
